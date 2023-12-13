@@ -25,8 +25,13 @@ class GenerateIdxTask extends DefaultTask{
 
         def extensionsClassName = matcher.pluginExtensions
         def traceClassName = matcher.traceObservers
-
-        output.text = (extensionsClassName+traceClassName).join('\n')
+        def extra = [
+                'ai.djl.mxnet.engine.MxEngineProvider',
+                'ai.djl.mxnet.zoo.MxZooProvider',
+                'ai.djl.repository.zoo.DefaultZooProvider',
+                'ai.djl.basicmodelzoo.BasicZooProvider',
+        ]
+        output.text = (extensionsClassName+traceClassName+extra).join('\n')
     }
 
 }

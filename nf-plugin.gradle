@@ -1,10 +1,14 @@
 nextflowPlugin{
-    githubOrganization = 'YOUR_GITHUB_ACCOUNT'
+    githubOrganization = 'jagedn'
     // pluginClassName, if not specified, can be calculated by gradle tasks
     // pluginClassName = 'com.nextflow.plugin.ExamplePlugin'
 }
 
 dependencies {
     // ADD HERE PLUGINS DEPENDENCIES
-    
+    implementation 'ai.djl:api:0.25.0'
+    implementation 'ai.djl:model-zoo:0.25.0'
+
+    implementation 'ai.djl.mxnet:mxnet-engine:0.25.0'
+    implementation 'ai.djl.mxnet:mxnet-model-zoo:0.25.0'
 }
